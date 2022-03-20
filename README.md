@@ -1,1 +1,1 @@
-# MATH6010_graph-and-network
+# MATH6010_Graph-and-Network
