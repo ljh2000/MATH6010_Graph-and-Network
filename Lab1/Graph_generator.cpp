@@ -12,19 +12,22 @@
 
 using namespace std;
 
-const int maxn = 1000;
-int n,m;
+const int maxn = 100;
+const int maxm = 10000;
+int n,m,fa[maxn];
 bool graph[maxn][maxn];
 
-int main()
-{
-    freopen("Graph.in","w",stdout);
-    n = 8;
-    m = 18;
-    cout << n << " " << m << endl;
+struct edge{
+    int x,y;
+}e[maxm];
 
-    srand(time(NULL));
+int find(int x){
+    if(fa[x] != x) fa[x] = find(fa[x]);
+    return fa[x];
+}
 
+bool check(){
+    memset(graph,0,sizeof(graph));
     int mcnt = 0;
     while(mcnt < m) {
         int x,y;
@@ -36,8 +39,42 @@ int main()
 
         graph[x][y] = 1;
         mcnt ++;
-        cout << x << " " << y << endl;
+        //cout << x << " " << y << endl;
+        e[mcnt].x = x; e[mcnt].y = y;
     }
-    
+
+    for(int i = 1;i <= n;i++) fa[i] = i;
+    for(int i = 1;i <= m;i++){
+        int fx,fy;
+        fx = find(e[i].x);
+        fy = find(e[i].y);
+        if(fx != fy)
+            fa[fx] = fy;
+    }
+
+    for(int i = 2;i <= n;i++) 
+        if(find(i) != find(1))
+            return false;
+    return true;
+}
+
+int main()
+{
+    freopen("Graph.in","w",stdout);
+    //n = 8;
+    //m = 18;
+
+    n = 8;
+    m = 10;
+
+    cout << n << " " << m << endl;
+
+    srand(time(NULL));
+
+    while(!check()) ;
+
+    for(int i = 1;i <= m;i++) 
+        cout << e[i].x << " " << e[i].y << endl;
+
     return 0;
 }
