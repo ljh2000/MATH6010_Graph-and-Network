@@ -62,10 +62,10 @@ int main()
 {
     freopen("Graph.in","w",stdout);
     //n = 8;
-    //m = 18;
+    //m = 10;
 
-    n = 8;
-    m = 10;
+    n = 10;
+    m = 19;
 
     cout << n << " " << m << endl;
 

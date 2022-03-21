@@ -18,6 +18,9 @@ bool cont[maxn]; // under control
 int sz;
 int first[maxn];
 int rk[maxn]; // rank
+int deg[maxn]; // degree
+//int upper_bd;
+double upper_bd;
 
 set<int>doms;
 
@@ -86,26 +89,49 @@ bool solve(){
     return false;
 }
 
+void calc_upper_bound(){
+    int mind = n;
+    for(int x = 1; x <= n;x++)
+        if(deg[x] < mind) 
+            mind = deg[x];
+    
+    double limit;
+    limit = n * (1 + log(1 + mind) );
+    limit /= mind + 1;
+
+    //upper_bd = (int)limit;
+    upper_bd = limit;
+}
+
 int main()
 {
     freopen("Graph.in","r",stdin);
-    freopen("Graph.out","w",stdout);
+    //freopen("Graph.out","w",stdout);
     
     cin >> n >> m;
     for(int i = 1;i <= m;i++) {
         int x,y;
         cin >> x >> y;
+
+        deg[x] ++;
+        deg[y] ++;
+
         add_edge(x,y);
     }
     
     while(!solve()) ;
 
-    cout << "dominating set size : " << sz << endl;
+    calc_upper_bound();
+
+    cout << endl << "The theory of upper bound : " << upper_bd << endl;
+    cout << "Dominating set size : " << sz << endl;
+
     set<int>::iterator it = doms.begin();
     while (it != doms.end()){
         cout << (*it) << " ";
         it++;
     }
+    cout << endl;
 
     return 0;
 }
