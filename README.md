@@ -5,10 +5,13 @@
 ### Lab 1 : Minimun Dominating Set
   Randomly generate graphs that satisfy class theorem conditions and design a greedy algorithm to solve the minimum dominating set problem.
 
-### Usage
+#### Usage
 ```
 ❯ g++ Graph_generator.cpp -o Graph_generator.exe
 ❯ g++ Minimun_Dominating_Set.cpp -o Minimun_Dominating_Set.exe
 ❯ g++ Test.cpp -o Test.exe
 ❯ .\Test.exe
 ```
+
+### Lab 2 : Edge Coloring
+  Use conditional probability method to achieve edge dyeing so that the number of K4 in the same color is less than or equal to the expected value.  
