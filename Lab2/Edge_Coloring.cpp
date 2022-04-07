@@ -99,7 +99,7 @@ int main()
 {
     //n = 200;
     //n = 6;
-    n = 200;
+    n = 150;
     m = n*(n-1)/2;
 
     // preprocess powers of two
@@ -111,11 +111,11 @@ int main()
 
     avg_ans = n * (n-1) * (n-2) * (n-3) / 24;
     avg_ans *= pow2[5];
-    cout << "Expected number of K4 : " << avg_ans << endl;
+    cout << "Expected number of K4 in the same color : " << avg_ans << endl;
 
     color_edge();
 
-    cout << ans << endl;
+    cout << "Final answer : " << ans << endl;
 
     /*for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++) 
