@@ -15,3 +15,9 @@
 
 ### Lab 2 : Edge Coloring
   Use conditional probability method to achieve edge dyeing so that the number of K4 in the same color is less than or equal to the expected value.  
+
+#### Usage
+```
+❯ g++ Edge_Coloring.cpp -o Edge_Coloring.exe
+❯ .\Edge_Coloring.exe
+```
