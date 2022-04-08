@@ -52,7 +52,7 @@ double calc_Ik4(int col1, int col2, int col3, int col4, int col5, int col6){
     if(r == 0) return pow2[5];
 
     // black or white : 2^(r-6)
-    return pow2[6-r];    
+    return pow2[6-r];
 }
 
 void color_edge(){
@@ -95,11 +95,16 @@ void color_edge(){
     }
 }
 
-int main()
+int main(int argc,char *argv[])
 {
     //n = 200;
     //n = 6;
-    n = 150;
+    if (argc == 1){
+        n = 200;
+    } else {
+        n = atoi(argv[1]);
+    }
+    cout << "current edge num : "<< n << endl ;
     m = n*(n-1)/2;
 
     // preprocess powers of two
@@ -111,14 +116,18 @@ int main()
 
     avg_ans = n * (n-1) * (n-2) * (n-3) / 24;
     avg_ans *= pow2[5];
-    cout << "Expected number of K4 in the same color : " << avg_ans << endl;
+
+    printf("Expected number of K4 in the same color : %10.0lf\n",avg_ans);
+    // cout << "Expected number of K4 in the same color : " << avg_ans << endl;
 
     color_edge();
 
-    cout << "Final answer : " << ans << endl;
+    printf("Final answer : %10.0lf\n",ans);
+    cout<<endl;
+    // cout << "Final answer : " << ans << endl;
 
     /*for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) 
+        for(int j = 1; j <= n; j++)
             cout << col[i][j] << " ";
         cout << endl;
     }*/
