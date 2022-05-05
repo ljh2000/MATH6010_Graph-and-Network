@@ -21,3 +21,20 @@
 ❯ g++ Edge_Coloring.cpp -o Edge_Coloring.exe
 ❯ .\Edge_Coloring.exe
 ```
+
+
+### Lab 3
+#### Uniform graph partition
+
+```
+❯ ./test.sh
+```
+
+#### Knapsack
+
+#### Steiner Triple Systems
+
+```
+❯ g++ SteinerTripleSystems.cpp -o SteinerTripleSystems.exe
+❯ .\Edge_Coloring.exe [node_num]
+```
