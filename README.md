@@ -18,8 +18,8 @@
 
 #### Usage
 ```
-❯ g++ Edge_Coloring.cpp -o Edge_Coloring.exe
-❯ .\Edge_Coloring.exe
+❯ g++ Edge_Coloring.cpp -o Edge_Coloring
+❯ ./Edge_Coloring
 ```
 
 
@@ -35,6 +35,6 @@
 #### Steiner Triple Systems
 
 ```
-❯ g++ SteinerTripleSystems.cpp -o SteinerTripleSystems.exe
-❯ .\Edge_Coloring.exe [node_num]
+❯ g++ SteinerTripleSystems.cpp -o SteinerTripleSystems
+❯ ./Edge_Coloring [node_num]
 ```
