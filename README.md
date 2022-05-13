@@ -25,15 +25,20 @@
 
 ### Lab 3
 #### Uniform graph partition
+A complete graph has $2n$ edges，the cost function is defined as:  $E \rightarrow Z^+  \cup \{0\}$
 
+Find uniform graph partition，minimize  $c([X_0, X_1]) = \sum\limits_{\{u, v\} \in E, u \in X_0,  v \in X_1} cos t(u, v)$ 
 ```
 ❯ ./test.sh
 ```
 
 #### Knapsack
+There are $N$ items, the value of the first $I $item is $P_i$ and the weight is $W_i$.  The backpack is $B$.
+
+Calculate the maximum value of items that can fit into a backpack if the total weight does not exceed the backpack capacity  
 
 #### Steiner Triple Systems
-
+At a given point set $V$, meet $|V| = v $, $V \equiv 1, 3 \(mod \6)$, meet the requirements of the system is constructed $STS (V, B)$. 
 ```
 ❯ g++ SteinerTripleSystems.cpp -o SteinerTripleSystems
 ❯ ./Edge_Coloring [node_num]
